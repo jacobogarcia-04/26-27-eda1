@@ -11,7 +11,6 @@ public class Tiempo {
     }
 
     public void avanzar() {
-
         horaActual = horaActual + MINUTO;
     }
 
@@ -23,5 +22,10 @@ public class Tiempo {
         int hora = (int) horaActual;
         int minutos = (int) (horaActual - hora) * 60;
         return hora + ":" + minutos;
+    }
+
+    public void mostrar(boolean haLlegadoCliente) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
     }
 }

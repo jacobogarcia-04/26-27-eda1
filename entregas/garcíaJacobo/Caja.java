@@ -1,25 +1,31 @@
 public class Caja {
-      public static void main(String[] args) {
-        
-      }
+  private Cliente cliente;
+  private boolean abierta;
+  private Console console;
 
-      public boolean puedeAtender(Object primero) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'puedeAtender'");
-      }
+  public Caja() {
+    abierta = false;
 
-      public boolean estaLibre() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'estaLibre'");
-      }
+  }
 
-	  public void añadirCliente(Cliente cliente) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'asingarCliente'");
-	  }
+  public boolean puedeAtender(Object primero) {
 
-      public void procesarAtencion() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'procesarAtencion'");
-      }
+  }
+
+  public boolean estaLibre() {
+
+  }
+
+  public void añadirCliente(Cliente cliente) {
+
+  }
+
+  public void procesarAtencion() {
+
+  }
+
+  public void comprobarApertura() {
+
+  }
+
 }
