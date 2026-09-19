@@ -24,7 +24,8 @@ public class CentroComercial {
 
             tiempo.avanzar();
             this.procesarLlegadaCliente();
-            fila.registrarEstado();
+            Fila.registrarEstado();
+            this.procesarAperturaCaja();
             this.asignarClienteACaja();
             this.atenderCliente();
             this.motrarEstado();
@@ -32,6 +33,12 @@ public class CentroComercial {
 
         } while (!tiempo.haFinalizado());
         this.mostrarResumen();
+    }
+
+    private void procesarAperturaCaja() {
+        for(int numeroCaja=0; numeroCaja<cajas.length;numeroCaja++){
+            cajas[numeroCaja].comprobarApertura();
+        }
     }
 
     private void motrarEstado() {
