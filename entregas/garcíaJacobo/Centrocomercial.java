@@ -6,6 +6,7 @@ public class CentroComercial {
     private Console console;
     private boolean haLlegadoCliente;
     private final double PROBABILIDAD_LLEGADA_CLIENTES = 0.6;
+    private final double PROBABILIDAD_CAJA_LIBRE = 0.4;
 
     private final int NUMERO_CAJAS = 4;
 
@@ -35,11 +36,16 @@ public class CentroComercial {
         this.mostrarResumen();
     }
 
-    private void procesarAperturaCaja() {
+   private void procesarAperturaCaja() {
+    if (Math.random() < PROBABILIDAD_CAJA_LIBRE) {
         for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
-            cajas[numeroCaja].comprobarApertura();
+            if (!cajas[numeroCaja].estaAbierta()) {
+                cajas[numeroCaja].abrir();
+                return;
+            }
         }
     }
+}
 
     private void motrarEstado() {
         console.cleanScreen();
