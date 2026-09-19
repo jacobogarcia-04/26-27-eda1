@@ -1,6 +1,0 @@
-/**
- * Cliente
- */
-public class Cliente {
-
-}
