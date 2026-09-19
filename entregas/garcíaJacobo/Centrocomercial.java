@@ -29,7 +29,7 @@ public class CentroComercial {
             this.procesarAperturaCaja();
             this.asignarClienteACaja();
             this.atenderCliente();
-            this.motrarEstado();
+            this.mostrarEstado();
             this.pausar();
 
         } while (!tiempo.haFinalizado());
@@ -47,23 +47,34 @@ public class CentroComercial {
         }
     }
 
-    private void motrarEstado() {
+    private void mostrarEstado() {
         console.cleanScreen();
         tiempo.mostrar(haLlegadoCliente);
         fila.mostrar();
         this.mostrarCajas();
+
     }
 
     private void mostrarCajas() {
-
+        for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
+            cajas[numeroCaja].mostrar();
+        }
     }
 
     private void mostrarResumen() {
+        int numeroClientesAtendidos = 0;
+        int personasEnFila = 0;
+        for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
+            numeroClientesAtendidos = numeroClientesAtendidos + cajas[numeroCaja].clientesAtendidos();
+        }
+        personasEnFila = fila.obtenerNumero();
+        console.write("Numero de clientes atendidos: " + numeroClientesAtendidos);
+        console.write("Personas en fila: " + personasEnFila);
 
     }
 
     private void pausar() {
-
+        console.pause(1);
     }
 
     private void atenderCliente() {
@@ -74,11 +85,10 @@ public class CentroComercial {
 
     private void asignarClienteACaja() {
         for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
-            if (cajas[numeroCaja].estaLibre() && fila.hayGente()) {
+            if (cajas[numeroCaja].puedeAtender() && fila.hayGente()) {
                 Cliente cliente = fila.sacar();
                 cajas[numeroCaja].añadirCliente(cliente);
             }
-
         }
     }
 
