@@ -6,7 +6,7 @@ public class CentroComercial {
     private Console console;
     private boolean haLlegadoCliente;
     private final double PROBABILIDAD_LLEGADA_CLIENTES = 0.6;
-    private final double PROBABILIDAD_CAJA_LIBRE = 0.4;
+
     private final int NUMERO_CAJAS = 4;
 
     public CentroComercial() {
@@ -24,7 +24,7 @@ public class CentroComercial {
 
             tiempo.avanzar();
             this.procesarLlegadaCliente();
-            Fila.registrarEstado();
+            fila.registrarEstado();
             this.procesarAperturaCaja();
             this.asignarClienteACaja();
             this.atenderCliente();
@@ -36,7 +36,7 @@ public class CentroComercial {
     }
 
     private void procesarAperturaCaja() {
-        for(int numeroCaja=0; numeroCaja<cajas.length;numeroCaja++){
+        for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
             cajas[numeroCaja].comprobarApertura();
         }
     }
@@ -49,7 +49,7 @@ public class CentroComercial {
     }
 
     private void mostrarCajas() {
-        
+
     }
 
     private void mostrarResumen() {
