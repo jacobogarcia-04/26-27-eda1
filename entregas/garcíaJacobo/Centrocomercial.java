@@ -36,16 +36,16 @@ public class CentroComercial {
         this.mostrarResumen();
     }
 
-   private void procesarAperturaCaja() {
-    if (Math.random() < PROBABILIDAD_CAJA_LIBRE) {
-        for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
-            if (!cajas[numeroCaja].estaAbierta()) {
-                cajas[numeroCaja].abrir();
-                return;
+    private void procesarAperturaCaja() {
+        if (Math.random() < PROBABILIDAD_CAJA_LIBRE) {
+            for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
+                if (!cajas[numeroCaja].estaAbierta()) {
+                    cajas[numeroCaja].abrir();
+                    return;
+                }
             }
         }
     }
-}
 
     private void motrarEstado() {
         console.cleanScreen();
@@ -74,8 +74,7 @@ public class CentroComercial {
 
     private void asignarClienteACaja() {
         for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
-            if (cajas[numeroCaja].estaLibre() && fila.hayGente()
-                    && cajas[numeroCaja].puedeAtender(fila.primero())) {
+            if (cajas[numeroCaja].estaLibre() && fila.hayGente()) {
                 Cliente cliente = fila.sacar();
                 cajas[numeroCaja].añadirCliente(cliente);
             }
