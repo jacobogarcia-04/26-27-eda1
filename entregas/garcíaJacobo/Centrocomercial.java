@@ -31,32 +31,31 @@ public class CentroComercial {
             this.pausar();
 
         } while (!tiempo.haFinalizado());
+        this.mostrarResumen();
+    }
 
+    private void mostrarResumen() {
+       
     }
 
     private void pausar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pausar'");
+
     }
 
     private void atenderCliente() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atenderCliente'");
+
     }
 
     private void asignarClienteACaja() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'asignarClienteACaja'");
+
     }
 
     private void registrarEstado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'registrarEstado'");
+
     }
 
     private void procesarLlegadaCliente() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'procesarLlegadaCliente'");
+
     }
 
 }
