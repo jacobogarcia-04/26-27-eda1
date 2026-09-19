@@ -6,6 +6,7 @@ public class Caja {
 
   public Caja() {
     abierta = false;
+    console = new Console();
 
   }
 
@@ -40,11 +41,13 @@ public class Caja {
     abierta = true;
   }
 
-  public  void mostrar() {
-    if (abierta) {
-        console.write("Caja abierta");
+ public void mostrar() {
+    if (!abierta) {
+        console.writeln(" cerrada");
+    } else if (cliente == null) {
+        console.writeln(" libre");
     } else {
-        console.write("Caja cerrada");
+        console.writeln(" cliente atendiendo");
     }
-
+}
 }

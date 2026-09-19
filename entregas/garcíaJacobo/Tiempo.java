@@ -20,12 +20,17 @@ public class Tiempo {
 
     private String horaHumana() {
         int hora = (int) horaActual;
-        int minutos = (int) (horaActual - hora) * 60;
+        int minutos = (int) ((horaActual - hora) * 60);
         return hora + ":" + minutos;
     }
 
     public void mostrar(boolean haLlegadoCliente) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
+           console.write("Hora: " + horaHumana());
+
+    if (haLlegadoCliente) {
+        console.writeln("Ha llegado un cliente");
+    } else {
+        console.writeln("No ha llegado ningún cliente");
     }
+}
 }

@@ -27,12 +27,15 @@ public class CentroComercial {
             this.procesarLlegadaCliente();
             fila.registrarEstado();
             this.procesarAperturaCaja();
-            this.asignarClienteACaja();
+
             this.atenderCliente();
+            this.asignarClienteACaja();
+
             this.mostrarEstado();
             this.pausar();
 
         } while (!tiempo.haFinalizado());
+
         this.mostrarResumen();
     }
 
@@ -57,6 +60,7 @@ public class CentroComercial {
 
     private void mostrarCajas() {
         for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
+            console.write("Caja[" + (numeroCaja + 1) + "]");
             cajas[numeroCaja].mostrar();
         }
     }
@@ -74,7 +78,7 @@ public class CentroComercial {
     }
 
     private void pausar() {
-        console.pause(1);
+        console.pause(2);
     }
 
     private void atenderCliente() {
