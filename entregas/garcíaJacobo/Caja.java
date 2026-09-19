@@ -40,4 +40,11 @@ public class Caja {
     abierta = true;
   }
 
+  public  void mostrar() {
+    if (abierta) {
+        console.write("Caja abierta");
+    } else {
+        console.write("Caja cerrada");
+    }
+
 }
