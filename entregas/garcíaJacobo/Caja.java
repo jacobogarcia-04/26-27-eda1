@@ -1,15 +1,15 @@
 public class Caja {
   private Cliente cliente;
   private boolean abierta;
+  private int clientesAtendidos;
   private Console console;
-  private final double PROBABILIDAD_CAJA_ABIERTA = 0.4;
 
   public Caja() {
     abierta = false;
 
   }
 
-  public boolean puedeAtender(Object primero) {
+  public boolean puedeAtender() {
     return this.estaLibre() && abierta == true;
   }
 
@@ -22,15 +22,22 @@ public class Caja {
   }
 
   public void procesarAtencion() {
+    if (abierta && cliente != null) {
+      clientesAtendidos++;
+      cliente = null;
+    }
+  }
 
+  public int clientesAtendidos() {
+    return clientesAtendidos;
   }
 
   public boolean estaAbierta() {
-
+    return abierta;
   }
 
   public void abrir() {
-
+    abierta = true;
   }
 
 }
