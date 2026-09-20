@@ -42,7 +42,6 @@ public class CentroComercial {
             for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
                 if (!cajas[numeroCaja].estaAbierta()) {
                     cajas[numeroCaja].abrir();
-                    return;
                 }
             }
         }
