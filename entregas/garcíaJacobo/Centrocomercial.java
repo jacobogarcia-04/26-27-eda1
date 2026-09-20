@@ -27,10 +27,8 @@ public class CentroComercial {
             this.procesarLlegadaCliente();
             fila.registrarEstado();
             this.procesarAperturaCaja();
-
             this.atenderCliente();
             this.asignarClienteACaja();
-
             this.mostrarEstado();
             this.pausar();
 

@@ -26,6 +26,7 @@ public class Caja {
     if (abierta && cliente != null) {
       clientesAtendidos++;
       cliente = null;
+      abierta=false;
     }
   }
 
@@ -47,7 +48,7 @@ public class Caja {
     } else if (cliente == null) {
         console.writeln(" libre");
     } else {
-        console.writeln(" cliente atendiendo");
+        console.writeln(" Abierta -> cliente atendiendo");
     }
 }
 }

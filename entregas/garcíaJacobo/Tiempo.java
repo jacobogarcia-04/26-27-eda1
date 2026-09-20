@@ -28,9 +28,9 @@ public class Tiempo {
            console.write("Hora: " + horaHumana());
 
     if (haLlegadoCliente) {
-        console.writeln("Ha llegado un cliente");
+        console.writeln(" Ha llegado un cliente");
     } else {
-        console.writeln("No ha llegado ningún cliente");
+        console.writeln(" No ha llegado ningún cliente");
     }
 }
 }
