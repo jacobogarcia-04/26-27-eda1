@@ -97,7 +97,7 @@ public class CentroComercial {
     private void procesarLlegadaCliente() {
         haLlegadoCliente = Math.random() < PROBABILIDAD_LLEGADA_CLIENTES;
         if (haLlegadoCliente) {
-            Cliente cliente = new Cliente();
+            Cliente cliente = new Cliente(tiempo.obtenerMinuto());
             fila.añadirCliente(cliente);
         }
     }

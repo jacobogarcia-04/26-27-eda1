@@ -3,6 +3,7 @@ public class Fila {
     private int numeroClientes;
     private int[] estados;
     private int numeroEstados;
+    private final double PROBABILIDAD_ABURRIRSE_CLIENTE = 0.3;
     private Console console;
 
     public Fila() {
@@ -35,17 +36,18 @@ public class Fila {
         numeroClientes++;
     }
 
-   public void mostrar() {
-    console.writeln("FILA:");
+    public void mostrar() {
+        console.writeln("FILA:");
 
-    if (numeroClientes == 0) {
-        console.writeln("  Vacia");
-    } else {
-        for (int i = 0; i < numeroClientes; i++) {
-            console.writeln("  Cliente " + (i + 1));
+        if (numeroClientes == 0) {
+            console.writeln("  Vacia");
+        } else {
+            for (int i = 0; i < numeroClientes; i++) {
+                console.writeln("  Cliente " + (i + 1));
+            }
         }
     }
-}
+
     public void registrarEstado() {
         estados[numeroEstados] = numeroClientes;
         numeroEstados++;
@@ -53,6 +55,20 @@ public class Fila {
 
     public int obtenerNumero() {
         return numeroClientes;
+    }
+
+    public void comprobarAburrimiento(int minutoActual) {
+        for (int i = 0; i < numeroClientes; i++) {
+            if (clientes[i].minutosEnCola(minutoActual) > 8) {
+                if (Math.random() < PROBABILIDAD_ABURRIRSE_CLIENTE) {
+                    for (int j = i + 1; j < numeroClientes; j++) {
+                        clientes[j - 1] = clientes[j];
+                    }
+
+                    numeroClientes--;
+                }
+            }
+        }
     }
 
 }
