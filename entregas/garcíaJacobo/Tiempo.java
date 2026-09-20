@@ -1,6 +1,6 @@
 public class Tiempo {
     private final double HORA_APERTURA = 10.0;
-    private final double HORA_CIERRE = 14.0;
+    private final double HORA_CIERRE = 12.0;
     private final double MINUTO = 0.0167;
     private double horaActual;
     private Console console;

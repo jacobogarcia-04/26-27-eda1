@@ -70,8 +70,8 @@ public class CentroComercial {
             numeroClientesAtendidos = numeroClientesAtendidos + cajas[numeroCaja].clientesAtendidos();
         }
         personasEnFila = fila.obtenerNumero();
-        console.write("Numero de clientes atendidos: " + numeroClientesAtendidos);
-        console.write("Personas en fila: " + personasEnFila);
+        console.writeln("Numero de clientes atendidos: " + numeroClientesAtendidos);
+        console.writeln("Personas en fila: " + personasEnFila);
 
     }
 

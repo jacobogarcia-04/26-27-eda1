@@ -1,6 +1,3 @@
-/**
- * Cliente
- */
 public class Cliente {
 
 }
