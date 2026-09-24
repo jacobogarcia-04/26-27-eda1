@@ -20,12 +20,10 @@ public class Fila {
     public Cliente sacar() {
         Cliente cliente = primero;
         primero = cliente.obtenerProximo();
-
         if (primero == null) {
             ultimo = null;
         }
         return cliente;
-
     }
 
     public void añadirCliente(Cliente cliente) {
@@ -37,7 +35,6 @@ public class Fila {
             ultimo.proximoCliente(cliente);
             ultimo = cliente;
         }
-
     }
 
     public void mostrar() {

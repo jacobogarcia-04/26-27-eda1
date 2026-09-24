@@ -11,10 +11,11 @@ public class Caja {
 
   }
 
-  public void proxima(Caja caja){
-    proxima=caja;
+  public void proxima(Caja caja) {
+    proxima = caja;
   }
-  public Caja obtenerProxima(){
+
+  public Caja obtenerProxima() {
     return proxima;
   }
 
@@ -34,7 +35,7 @@ public class Caja {
     if (abierta && cliente != null) {
       clientesAtendidos++;
       cliente = null;
-      abierta=false;
+      abierta = false;
     }
   }
 
@@ -50,13 +51,13 @@ public class Caja {
     abierta = true;
   }
 
- public void mostrar() {
+  public void mostrar() {
     if (!abierta) {
-        console.writeln(" cerrada");
+      console.writeln(" cerrada");
     } else if (cliente == null) {
-        console.writeln(" libre");
+      console.writeln(" libre");
     } else {
-        console.writeln(" Abierta -> cliente atendiendo");
+      console.writeln(" Abierta -> cliente atendiendo");
     }
-}
+  }
 }

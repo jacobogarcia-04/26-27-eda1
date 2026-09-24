@@ -15,7 +15,6 @@ public class CentroComercial {
         tiempo = new Tiempo();
         console = new Console();
         for (int i = 0; i < NUMERO_CAJAS; i++) {
-
             if (!this.hayCajas()) {
                 primera = new Caja();
                 ultima = primera;
@@ -50,11 +49,8 @@ public class CentroComercial {
 
     private void procesarAperturaCaja() {
         if (Math.random() < PROBABILIDAD_CAJA_LIBRE) {
-
             Caja cajaActual = primera;
-
             while (cajaActual != null) {
-
                 if (!cajaActual.estaAbierta()) {
                     cajaActual.abrir();
                 }
