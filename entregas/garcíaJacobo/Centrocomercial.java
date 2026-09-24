@@ -2,22 +2,34 @@ public class CentroComercial {
 
     private Fila fila;
     private Tiempo tiempo;
-    private Caja[] cajas;
+    private Caja primera;
+    private Caja ultima;
     private Console console;
     private boolean haLlegadoCliente;
     private final double PROBABILIDAD_LLEGADA_CLIENTES = 0.6;
     private final double PROBABILIDAD_CAJA_LIBRE = 0.4;
-
     private final int NUMERO_CAJAS = 4;
 
     public CentroComercial() {
         fila = new Fila();
-        cajas = new Caja[NUMERO_CAJAS];
         tiempo = new Tiempo();
         console = new Console();
         for (int i = 0; i < NUMERO_CAJAS; i++) {
-            cajas[i] = new Caja();
+
+            if (!this.hayCajas()) {
+                primera = new Caja();
+                ultima = primera;
+            } else {
+                Caja caja = new Caja();
+                ultima.proxima(caja);
+                ultima = caja;
+            }
         }
+
+    }
+
+    private boolean hayCajas() {
+        return primera != null;
     }
 
     public void ejecutar() {
@@ -25,7 +37,6 @@ public class CentroComercial {
 
             tiempo.avanzar();
             this.procesarLlegadaCliente();
-            fila.registrarEstado();
             this.procesarAperturaCaja();
             this.atenderCliente();
             this.asignarClienteACaja();
@@ -39,10 +50,16 @@ public class CentroComercial {
 
     private void procesarAperturaCaja() {
         if (Math.random() < PROBABILIDAD_CAJA_LIBRE) {
-            for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
-                if (!cajas[numeroCaja].estaAbierta()) {
-                    cajas[numeroCaja].abrir();
+
+            Caja cajaActual = primera;
+
+            while (cajaActual != null) {
+
+                if (!cajaActual.estaAbierta()) {
+                    cajaActual.abrir();
                 }
+
+                cajaActual = cajaActual.obtenerProxima();
             }
         }
     }
@@ -56,22 +73,27 @@ public class CentroComercial {
     }
 
     private void mostrarCajas() {
-        for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
-            console.write("Caja[" + (numeroCaja + 1) + "]");
-            cajas[numeroCaja].mostrar();
+        Caja cajaActual = primera;
+        int contador = 1;
+        while (cajaActual != null) {
+            console.write("Caja[" + contador + "]");
+            cajaActual.mostrar();
+            cajaActual = cajaActual.obtenerProxima();
+            contador++;
         }
     }
 
     private void mostrarResumen() {
+        Caja cajaActual = primera;
         int numeroClientesAtendidos = 0;
         int personasEnFila = 0;
-        for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
-            numeroClientesAtendidos = numeroClientesAtendidos + cajas[numeroCaja].clientesAtendidos();
+        while (cajaActual != null) {
+            numeroClientesAtendidos = numeroClientesAtendidos + cajaActual.clientesAtendidos();
+            cajaActual = cajaActual.obtenerProxima();
         }
         personasEnFila = fila.obtenerNumero();
         console.writeln("Numero de clientes atendidos: " + numeroClientesAtendidos);
         console.writeln("Personas en fila: " + personasEnFila);
-
     }
 
     private void pausar() {
@@ -79,17 +101,23 @@ public class CentroComercial {
     }
 
     private void atenderCliente() {
-        for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
-            cajas[numeroCaja].procesarAtencion();
+
+        Caja cajaActual = primera;
+        while (cajaActual != null) {
+            cajaActual.procesarAtencion();
+            cajaActual = cajaActual.obtenerProxima();
         }
     }
 
     private void asignarClienteACaja() {
-        for (int numeroCaja = 0; numeroCaja < cajas.length; numeroCaja++) {
-            if (cajas[numeroCaja].puedeAtender() && fila.hayGente()) {
+        Caja cajaActual = primera;
+        while (cajaActual != null) {
+            if (cajaActual.puedeAtender() && fila.hayGente()) {
                 Cliente cliente = fila.sacar();
-                cajas[numeroCaja].añadirCliente(cliente);
+                cajaActual.añadirCliente(cliente);
+
             }
+            cajaActual = cajaActual.obtenerProxima();
         }
     }
 

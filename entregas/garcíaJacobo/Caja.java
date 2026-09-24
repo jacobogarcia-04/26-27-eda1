@@ -1,6 +1,7 @@
 public class Caja {
   private Cliente cliente;
   private boolean abierta;
+  private Caja proxima;
   private int clientesAtendidos;
   private Console console;
 
@@ -8,6 +9,13 @@ public class Caja {
     abierta = false;
     console = new Console();
 
+  }
+
+  public void proxima(Caja caja){
+    proxima=caja;
+  }
+  public Caja obtenerProxima(){
+    return proxima;
   }
 
   public boolean puedeAtender() {

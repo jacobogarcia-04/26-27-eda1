@@ -46,7 +46,7 @@ public class Fila {
         int contador = 0;
         while (clienteActual != null) {
             contador++;
-            console.writeln("Cliente" + contador);
+            console.writeln("Cliente " + contador);
             clienteActual = clienteActual.obtenerProximo();
 
         }
