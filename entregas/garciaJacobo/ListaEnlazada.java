@@ -102,4 +102,35 @@ class ListaEnlazada {
         cabeza = dummy.siguiente;
 
     }
+
+    public void eliminarRepetidosSinDummy() {
+        if (cabeza != null &&
+                cabeza.siguiente != null &&
+                cabeza.dato == cabeza.siguiente.dato) {
+            Nodo repetido = cabeza;
+
+            while (repetido.siguiente != null &&
+                    repetido.dato == repetido.siguiente.dato) {
+                repetido = repetido.siguiente;
+            }
+            cabeza = repetido.siguiente;
+        }
+
+        Nodo actual = cabeza;
+        while (actual != null && actual.siguiente != null) {
+            if (actual.siguiente.siguiente != null &&
+                    actual.siguiente.dato == actual.siguiente.siguiente.dato) {
+                Nodo repetido = actual.siguiente;
+                while (repetido.siguiente != null &&
+                        repetido.dato == repetido.siguiente.dato) {
+                    repetido = repetido.siguiente;
+                }
+                actual.siguiente = repetido.siguiente;
+            } else {
+                actual = actual.siguiente;
+            }
+
+        }
+
+    }
 }
