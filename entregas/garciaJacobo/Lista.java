@@ -77,7 +77,7 @@ public class Lista {
     }
 
     public int obtener(int posicion) {
-        assert posicion >= 0 && posicion < longitud - 1;
+        assert posicion >= 0 && posicion < longitud ;
         return lista[posicion];
     }
 
@@ -101,5 +101,9 @@ public class Lista {
 
     private boolean estaLleno() {
         return lista.length == longitud;
+    }
+
+    public int capacidad() {
+      return lista.length;
     }
 }
