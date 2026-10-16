@@ -1,4 +1,4 @@
-# Explicacion de eleccion en estructura de datos y algoritmos
+# Explicación de eleccion en estructura de datos y algoritmos
 
 ## Array de votos tipo (int).
 - Almacena en el array los votos hacia cada candidato. 
