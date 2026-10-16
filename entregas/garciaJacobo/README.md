@@ -10,7 +10,3 @@ Explicacion de eleccion en estructura de datos y algoritmos
 - tamaño de inicializacion: dependera de los candidatos de la votacion
 - Sera un array de tipo string por ejemplo por ejemplo-> Jacobo,Hugo,Hector,Nulo,Abstencion-> para almacenar los nombres de los candidatos
 
-- | Estructura de datos | Tipo de dato | Tamaño | Descripción |
-|---|---|---|---|
-| Array de votos | `int` | Número de candidatos + 2 (Nulos y Abstención) | Almacena la cantidad de votos recibidos por cada candidato, además de los votos nulos y las abstenciones. Los valores se incrementan a medida que se registran los votos. Cada posición corresponde a un candidato o a una de estas dos categorías. |
-| Array de candidatos | `string` | Número de candidatos + 2 | Almacena los nombres de los candidatos y las categorías adicionales de Nulos y Abstención. Por ejemplo: `["Jacobo", "Hugo", "Hector", "Nulo", "Abstencion"]`. |
