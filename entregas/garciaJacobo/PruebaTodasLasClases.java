@@ -1,6 +1,6 @@
 package entregas.garciaJacobo;
 
-public class Ejemplo {
+public class PruebaTodasLasClases {
     private Console console;
 
     public static void main(String[] args) {
