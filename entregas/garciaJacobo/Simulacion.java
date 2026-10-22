@@ -82,6 +82,7 @@ public class Simulacion {
             votacion.contarVoto(voto);
         }
         votacion.mostrarRecuento();
+        votacion.mostrarResultado();
     }
 
 }
