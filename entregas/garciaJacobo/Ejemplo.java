@@ -1,6 +1,7 @@
 package entregas.garciaJacobo;
 
 public class Ejemplo {
+    
     public static void main(String[] args) {
         Queue cola = new Queue();
         
@@ -16,6 +17,14 @@ public class Ejemplo {
         System.out.println(cola.sacarPrimero());
         System.out.println(cola.sacarPrimero());
         System.out.println(cola.estaVacia());
+        
+        ListaAlumnosPresentes lista=new ListaAlumnosPresentes();
+        System.out.println("----------------");
+       lista.insertarInicio("jacobo");
+       lista.insertarInicio("hugo");
+       lista.insertarInicio("kiko");
+
+       lista.mostrar();
 
     }
 
