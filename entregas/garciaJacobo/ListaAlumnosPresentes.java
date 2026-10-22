@@ -20,7 +20,7 @@ public class ListaAlumnosPresentes {
         Node actual = primero;
         while (actual != null) {
             actual.getValue();
-            console.writeln(actual.getValue());
+            console.writeln("-"+actual.getValue());
             actual = actual.getNext();
 
         }

@@ -60,7 +60,7 @@ public class ListaCandidatos {
         Node actual = primero;
         while (actual != null) {
             actual.getValue();
-            console.writeln(actual.getValue());
+            console.writeln("-" + actual.getValue());
             actual = actual.getNext();
 
         }
@@ -107,14 +107,14 @@ public class ListaCandidatos {
         return opciones;
     }
 
-    public int [] crearRecuento(String[] opciones ){
-        int[] recuento= new int [opciones.length];
+    public int[] crearRecuento(String[] opciones) {
+        int[] recuento = new int[opciones.length];
         return recuento;
     }
 
-    public void mostrarRecuento(int[]recuento){
-        for(int i =0 ; i<recuento.length ; i++){
-            console.writeln("["+recuento[i]+"]");
+    public void mostrarRecuento(int[] recuento) {
+        for (int i = 0; i < recuento.length; i++) {
+            console.writeln("[" + recuento[i] + "]");
         }
     }
 
