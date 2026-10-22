@@ -51,6 +51,11 @@ public class Ejemplo {
 
         console.writeln("Candidatos después de eliminar:");
         candidatos.mostrar();
+
+        console.write(candidatos.tamaño());
+
+
+        
     }
 
 }

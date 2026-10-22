@@ -65,5 +65,18 @@ public class ListaCandidatos {
 
         }
     }
+    public int tamaño(){
+        Node actual=primero;
+        int contador=0;
+        while(actual!=null){
+           actual= actual.getNext();
+            contador++;
+        }
+        return contador;
+    }
+
+    public String[] convertirAARRAY(){
+        
+    }
 
 }
