@@ -61,6 +61,9 @@ public class Ejemplo {
         console.writeln("Mostrar opciones de votacion");
         candidatos.mostrarArray(opciones);
 
+       int[] recuento = candidatos.crearRecuento(opciones);
+
+       candidatos.mostrarRecuento(recuento);
     }
 
 }

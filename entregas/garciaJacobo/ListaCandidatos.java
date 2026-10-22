@@ -107,4 +107,15 @@ public class ListaCandidatos {
         return opciones;
     }
 
+    public int [] crearRecuento(String[] opciones ){
+        int[] recuento= new int [opciones.length];
+        return recuento;
+    }
+
+    public void mostrarRecuento(int[]recuento){
+        for(int i =0 ; i<recuento.length ; i++){
+            console.writeln("["+recuento[i]+"]");
+        }
+    }
+
 }
