@@ -1,8 +1,11 @@
 package entregas.garciaJacobo;
 
 public class Ejemplo {
+    private Console console;
+    
 
     public static void main(String[] args) {
+        Console console=new Console();
         Queue cola = new Queue();
 
         System.out.println(cola.estaVacia());
@@ -30,6 +33,24 @@ public class Ejemplo {
 
         System.out.println("----------------");
         lista.mostrar();
+
+        ListaCandidatos candidatos = new ListaCandidatos();
+
+        candidatos.insertarInicio("Ana");
+        candidatos.insertarInicio("Luis");
+        candidatos.insertarInicio("Carlos");
+
+        console.writeln("Candidatos:");
+        candidatos.mostrar();
+
+        console.writeln("¿Ana es candidata?");
+        console.writeln(candidatos.contiene("Ana"));
+
+        console.writeln("Eliminamos a Luis:");
+        candidatos.eliminar("Luis");
+
+        console.writeln("Candidatos después de eliminar:");
+        candidatos.mostrar();
     }
 
 }
