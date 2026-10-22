@@ -8,4 +8,15 @@ public class Queue {
         primero = null;
         ultimo = null;
     }
+
+    public void insertarAlFinal(String value) {
+        Node nuevo = new Node(value);
+        if (primero == null) {
+            primero = nuevo;
+            ultimo = nuevo;
+        } else {
+            ultimo.setNext(nuevo);
+            ultimo = nuevo;
+        }
+    }
 }
