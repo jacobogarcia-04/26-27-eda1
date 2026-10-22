@@ -2,10 +2,9 @@ package entregas.garciaJacobo;
 
 public class Ejemplo {
     private Console console;
-    
 
     public static void main(String[] args) {
-        Console console=new Console();
+        Console console = new Console();
         Queue cola = new Queue();
 
         System.out.println(cola.estaVacia());
@@ -52,10 +51,13 @@ public class Ejemplo {
         console.writeln("Candidatos después de eliminar:");
         candidatos.mostrar();
 
-        console.write(candidatos.tamaño());
+        console.writeln("tamaño:" + candidatos.tamaño());
+        System.out.println("----------------");
 
+        console.writeln("Mostrar array de candidatos");
+        String[] arrayCandidatos = candidatos.convertirAArray();
+        candidatos.mostrarArray(arrayCandidatos);
 
-        
     }
 
 }

@@ -65,18 +65,35 @@ public class ListaCandidatos {
 
         }
     }
-    public int tamaño(){
-        Node actual=primero;
-        int contador=0;
-        while(actual!=null){
-           actual= actual.getNext();
+
+    public int tamaño() {
+        Node actual = primero;
+        int contador = 0;
+        while (actual != null) {
+            actual = actual.getNext();
             contador++;
         }
         return contador;
     }
 
-    public String[] convertirAARRAY(){
-        
+    public String[] convertirAArray() {
+        String[] candidatos = new String[tamaño()];
+
+        int contador = 0;
+        Node actual = primero;
+
+        while (actual != null) {
+            candidatos[contador] = actual.getValue();
+            actual = actual.getNext();
+            contador++;
+        }
+        return candidatos;
+    }
+
+    public void mostrarArray(String[] candidatos) {
+        for (int i = 0; i < candidatos.length; i++) {
+            console.writeln("-" + candidatos[i]);
+        }
     }
 
 }
