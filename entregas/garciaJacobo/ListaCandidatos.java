@@ -96,4 +96,15 @@ public class ListaCandidatos {
         }
     }
 
+    public String[] obtenerOpcionesVotacion(String[] candidatos) {
+        String opciones[] = new String[candidatos.length + 2];
+        for (int i = 0; i < candidatos.length; i++) {
+            opciones[i] = candidatos[i];
+        }
+        opciones[candidatos.length] = "Blanco";
+        opciones[candidatos.length + 1] = "Nulo";
+
+        return opciones;
+    }
+
 }

@@ -57,6 +57,9 @@ public class Ejemplo {
         console.writeln("Mostrar array de candidatos");
         String[] arrayCandidatos = candidatos.convertirAArray();
         candidatos.mostrarArray(arrayCandidatos);
+        String[] opciones = candidatos.obtenerOpcionesVotacion(arrayCandidatos);
+        console.writeln("Mostrar opciones de votacion");
+        candidatos.mostrarArray(opciones);
 
     }
 
