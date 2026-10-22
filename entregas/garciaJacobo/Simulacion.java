@@ -30,7 +30,6 @@ public class Simulacion {
 
         console.writeln("Alumnos presentes después de la salida:");
         console.writeln();
-
         alumnos.mostrar();
 
         console.writeln("");
@@ -65,28 +64,24 @@ public class Simulacion {
         console.writeln("Opciones de votación:");
         candidatos.mostrarArray(opciones);
 
-        console.writeln("");
-        console.writeln("--- Se abre la votación. ---");
+        Votacion votacion = new Votacion(opciones);
 
-        Queue papeletas = new Queue();
+        votacion.recogerPapeleta("Ana");
+        votacion.recogerPapeleta("Marta");
+        votacion.recogerPapeleta("");
+        votacion.recogerPapeleta("Carlos");
 
-        papeletas.insertarAlFinal("Ana");
-        papeletas.insertarAlFinal("Marta");
-        papeletas.insertarAlFinal("");
-        papeletas.insertarAlFinal("Carlos");
         console.writeln("");
         console.writeln("El profesor elige a Javier como secretario.");
         console.writeln("--- Se abre la votación. ---");
-        while (!papeletas.estaVacia()) {
-            String voto = papeletas.sacarPrimero();
+        while (votacion.quedanPapeletas()) {
+            String voto = votacion.leerPapeleta();
 
             console.writeln("Javier lee la papeleta: " + voto);
-        }
-        String voto = papeletas.sacarPrimero();
 
-if (voto.equals("")) {
-    
-    
-}
+            votacion.contarVoto(voto);
+        }
+        votacion.mostrarRecuento();
     }
+
 }

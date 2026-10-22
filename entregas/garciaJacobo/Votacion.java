@@ -4,11 +4,13 @@ public class Votacion {
     private String[] opciones;
     private Queue papeletas;
     private int[] recuento;
+    private Console console;
 
     public Votacion(String[] opciones) {
         this.opciones = opciones;
         papeletas = new Queue();
         recuento = new int[opciones.length];
+        console=new Console();
     }
 
     public void recogerPapeleta(String voto) {
@@ -39,4 +41,13 @@ public class Votacion {
             }
         }
     }
+
+    public boolean quedanPapeletas() {
+        return !papeletas.estaVacia();
+    }
+    public void mostrarRecuento() {
+    for (int i = 0; i < opciones.length; i++) {
+        console.writeln(opciones[i] + " -->" + recuento[i]);
+    }
+}
 }
