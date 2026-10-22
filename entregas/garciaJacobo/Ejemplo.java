@@ -1,13 +1,12 @@
 package entregas.garciaJacobo;
 
 public class Ejemplo {
-    
+
     public static void main(String[] args) {
         Queue cola = new Queue();
-        
+
         System.out.println(cola.estaVacia());
 
-        
         cola.insertarAlFinal("a");
         cola.insertarAlFinal("b");
         cola.insertarAlFinal("c");
@@ -17,15 +16,20 @@ public class Ejemplo {
         System.out.println(cola.sacarPrimero());
         System.out.println(cola.sacarPrimero());
         System.out.println(cola.estaVacia());
-        
-        ListaAlumnosPresentes lista=new ListaAlumnosPresentes();
+
+        ListaAlumnosPresentes lista = new ListaAlumnosPresentes();
         System.out.println("----------------");
-       lista.insertarInicio("jacobo");
-       lista.insertarInicio("hugo");
-       lista.insertarInicio("kiko");
+        lista.insertarInicio("jacobo");
+        lista.insertarInicio("hugo");
+        lista.insertarInicio("kiko");
+        lista.mostrar();
+        lista.eliminar("jacobo");
+        System.out.println("----------------");
+        lista.mostrar();
+        lista.eliminar("kiko");
 
-       lista.mostrar();
-
+        System.out.println("----------------");
+        lista.mostrar();
     }
 
 }

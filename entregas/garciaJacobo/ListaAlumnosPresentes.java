@@ -24,6 +24,31 @@ public class ListaAlumnosPresentes {
             actual = actual.getNext();
 
         }
+    }
 
+    public boolean eliminar(String value) {
+        if (primero == null) {
+            return false;
+        }
+
+        if (primero.getValue().equals(value)) {
+            primero = primero.getNext();
+            return true;
+        }
+
+        Node anterior = primero;
+        Node actual = primero.getNext();
+
+        while (actual != null) {
+            if (actual.getValue().equals(value)) {
+                anterior.setNext(actual.getNext());
+                return true;
+            }
+
+            anterior = actual;
+            actual = actual.getNext();
+        }
+
+        return false;
     }
 }
